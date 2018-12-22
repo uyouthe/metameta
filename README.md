@@ -1,6 +1,6 @@
 # 🤔 Metameta
 
-> dude, i'm feeling like i've just pushed yourself up to the meta level...
+> dude, i'm feeling like i've just pushed myself up to the meta level...
 >
 >— <cite>me, while hackatoning at Hogan Coffee with [@martyns0n](https://github.com/martyns0n)</cite>
 
@@ -26,6 +26,11 @@ Speaking of conceptions, metameta is _an alternative JS interpreter written in J
   meta.push(value => console.log(value), [], true)
   // prints out 4
 ```
+
+## Why?
+Because it's faster. For example, if you need to render tons of DOM elements from, say, json, metameta will render them in the background, fast and asynchronously, taking by 50 or by whatever you like. 
+
+Being used properly, Metameta drastically reduces [time to interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive).
 
 ## Complete API guide
 TODO
