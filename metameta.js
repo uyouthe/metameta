@@ -45,7 +45,7 @@ class Metameta {
 
       if (next) {
         const nextFunction = next[0]
-        const nextArgs = next[1]
+        const nextArgs = next[1] || []
         const chains = next[2]
 
         if (chains) {
