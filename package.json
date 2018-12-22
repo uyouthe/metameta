@@ -1,0 +1,25 @@
+{
+  "name": "metameta",
+  "version": "1.0.0",
+  "description": "Isomorphic meta-context for more efficient JS runtime",
+  "main": "metameta.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uyouthe/metameta.git"
+  },
+  "keywords": [
+    "js",
+    "meta",
+    "metameta",
+    "function",
+    "async"
+  ],
+  "author": "Miloslav Voloskov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uyouthe/metameta/issues"
+  },
+  "homepage": "https://github.com/uyouthe/metameta#readme"
+}
