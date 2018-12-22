@@ -1,17 +1,5 @@
-export default class Metameta {
-  constructor (options) {
-    super (options)
-
-    this._runtime = this._runtime.bind(this)
-    this.start = this.start.bind(this)
-    this.stop = this.stop.bind(this)
-    this.push = this.push.bind(this)
-    this.clear = this.clear.bind(this)
-    this.getQueue = this.getQueue.bind(this)
-    this.on = this.on.bind(this)
-    this.off = this.off.bind(this)
-    this.getOptions = this.getOptions.bind(this)
-
+class Metameta {
+  constructor (options = {}) {
     this.options = {
       interval: options.interval || 20,
       bias: options.bias || 50
@@ -31,30 +19,43 @@ export default class Metameta {
       // notifies you whether there were function to execute or not
       stop: (isFinished) => {},
 
-      // called on push. Receives the whole queue,
-      // the new function and whether this push has started the execution
-      push: (queue, fn, wasStarted) => {},
+      // called on push. Receives the the new function
+      // and whether this push has started the execution
+      push: (fn, wasStarted) => {},
 
       // called on queue wiping
       clear: () => {}
     }
+
+    this._runtime = this._runtime.bind(this)
+    this.start = this.start.bind(this)
+    this.stop = this.stop.bind(this)
+    this.push = this.push.bind(this)
+    this.clear = this.clear.bind(this)
+    this.getQueue = this.getQueue.bind(this)
+    this.on = this.on.bind(this)
+    this.off = this.off.bind(this)
+    this.getOptions = this.getOptions.bind(this)
   }
 
   _runtime () {
     for (let i = 0; i < this.options.bias; i++) {
       // destructurize next function
-      const next = this.queue.pop()
+      const next = this.queue.shift()
 
       if (next) {
         const nextFunction = next[0]
         const nextArgs = next[1]
+        const chains = next[2]
 
-        // pass previous execution result as the first argument
-        nextArgs.unshift(previousResult)
+        if (chains) {
+          // pass previous execution result as the first argument
+          nextArgs.unshift(previousResult)
+        }
 
         // call the actual function
-        this.previousResult = nextFunction.apply(nextArgs)
-        this.events['tick'](previousResult, next)
+        this.previousResult = nextFunction.apply(null, nextArgs)
+        this.events['tick'](this.previousResult, next)
       } else {
         this.stop()
         this.events['stop'](true)
@@ -63,7 +64,7 @@ export default class Metameta {
   }
 
   start () {
-    this.clock = setInterval(this.options.interval || 20, this._runtime)
+    this.clock = setInterval(this._runtime, this.options.interval)
     this.events['start']()
   }
 
@@ -77,16 +78,15 @@ export default class Metameta {
     this.events['stop'](true)
   }
 
-  push (args) {
+  push (fn, args, chains = false) {
     const prevLength = this.queue.length
-    const fn = [args[0], [...args.slice(1)]]
-    this.queue.push(fn)
+    this.queue.push([fn, args, chains])
 
     if (prevLength === 0) {
       this.start()
     }
 
-    this.events['push'](queue, fn, prevLength === 0)
+    this.events['push'](fn, prevLength === 0)
   }
 
   clear () {
@@ -110,3 +110,5 @@ export default class Metameta {
     this.events[event] = () => {}
   }
 }
+
+// export default Metameta

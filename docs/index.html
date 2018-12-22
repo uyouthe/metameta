@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>metameta.js — an alternative execution context</title>
+  </head>
+  <body>
+
+    <script src="../metameta.js"></script>
+    <script>
+      const meta = new Metameta()
+      meta.push(s => alert(s), ['hello!'])
+      meta.push(s => alert(s), ['world!'])
+      meta.push(s => alert(s), ['this!'])
+      meta.push(s => alert(s), ['is!'])
+      meta.push(s => alert(s), ['awesome!'])
+    </script>
+  </body>
+</html>
