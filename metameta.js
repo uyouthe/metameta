@@ -50,7 +50,7 @@ class Metameta {
 
         if (chains) {
           // pass previous execution result as the first argument
-          nextArgs.unshift(previousResult)
+          nextArgs.unshift(this.previousResult)
         }
 
         // call the actual function
