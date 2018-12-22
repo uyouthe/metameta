@@ -21,7 +21,9 @@
     <script>
       const meta = new Metameta()
 
-      for (let i = 0; i < 100; i++) {
+      const limit = parseInt(prompt('How much nodes? 10000 is fine') || 10000)
+
+      for (let i = 1; i <= limit; i++) {
         meta.push(text => {
           const span = document.createElement('span')
           span.innerHTML = i
