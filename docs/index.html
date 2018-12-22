@@ -6,17 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>metameta.js — an alternative execution context</title>
+
+    <style>
+      span {
+        display: inline-block;
+        padding: 2px;
+        border: 1px dotted black;
+      }
+    </style>
   </head>
   <body>
 
     <script src="../metameta.js"></script>
     <script>
       const meta = new Metameta()
-      meta.push(s => alert(s), ['hello!'])
-      meta.push(s => alert(s), ['world!'])
-      meta.push(s => alert(s), ['this!'])
-      meta.push(s => alert(s), ['is!'])
-      meta.push(s => alert(s), ['awesome!'])
+
+      for (let i = 0; i < 100; i++) {
+        meta.push(text => {
+          const span = document.createElement('span')
+          span.innerHTML = i
+          document.body.appendChild(span)
+        }, [i])
+      }
     </script>
   </body>
 </html>
