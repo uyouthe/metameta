@@ -82,7 +82,32 @@ meta.clear()
 
 ### Getting execution context
 
+You can get execution options and the queue itself:
+```JS
+meta.getOptions()
+// returns something like { interval: 20, bias: 50 }
+
+meta.getQueue()
+// returns the queue
+```
+
 ### Events
+You can subscribe to events like this:
+```JS
+meta.on('event', cb)
+```
+
+To unsubscribe, call `off`:
+```JS
+meta.off('event')
+```
+
+Events available:
+ - `tick` — fired on every execution and receives the previous result and the next tuple as parameters  
+ - `start` — fired when execution starts. Receives nothing  
+ - `stop` — you guessed it. Receives `true` if the queue was empty when execution stopped, `false` otherwise  
+ - `push` — fired when new execution was scheduled. Receives the actual function scheduled and `true` if this specific push led to execution start. It happens when the queue was empty before, and this execution was first in line  
+ - `clear`— fired on queue wiping. Receives nothing  
 
 
 ## Cheatsheet
