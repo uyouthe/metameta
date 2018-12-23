@@ -45,7 +45,19 @@ Because it's faster. For example, if you need to render tons of DOM elements fro
 Being used properly, Metameta drastically reduces [time to interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive).
 
 ## Complete API guide
-TODO
+
+### The meta-flow
+
+
+
+### Runtime management
+
+### Events
+
+### Cheatsheet
+```JS
+
+```
 
 ## Credits
 [@martyns0n](https://github.com/martyns0n), [@ai](https://github.com/ai) — inspiration  
