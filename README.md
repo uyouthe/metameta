@@ -54,9 +54,51 @@ Being used properly, Metameta drastically reduces [time to interactive](https://
 
 ### Events
 
-### Cheatsheet
-```JS
 
+## Cheatsheet
+```JS
+// standard parameters: interval is 20 ms, bias is 50
+const meta = new Metameta()
+
+// passing options
+const meta = new Metameta({
+  interval: 100,
+  bias: 1
+})
+
+// scheduling function execution
+meta.push(() => console.log('hi'))
+
+// scheduling with parameters
+meta.push(console.log, ['hello ', 'world!'])
+
+// chaining functions — the latter will receive the result of previous execution as the first parameter
+meta.push(x => x + 2, [1])
+meta.push(alert, true) // that boolean argument
+
+// chaining with parameters
+meta.push(x => x + 2, [1])
+meta.push((prev, x) => x + prev, [4], true)
+// (prev, x) function will receive (1, 4) as parameters
+
+// stopping
+meta.stop()
+
+// resuming
+meta.start()
+
+// clearing queue
+meta.clear()
+
+// getting options and queue
+meta.getOptions()
+meta.getQueue()
+
+// subscribing to events
+meta.on('start', () => console.log('started'))
+
+// unsubscribing
+meta.off('start')
 ```
 
 ## Credits
