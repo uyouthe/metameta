@@ -48,9 +48,39 @@ Being used properly, Metameta drastically reduces [time to interactive](https://
 
 ### The meta-flow
 
+Once in `interval`, metameta unshifts the function tuple from the queue. It looks like this:
+```JS
+[fn, [args], false]
+```
+
+or this:
+```JS
+[fn, false]
+```
+
+The first element is a function to execute. The second is either its arguments or chaining flag. The third is chaining flag, passed explicitly when you want to chain a function call with arguments.
+
+Chaining is disabled by default.
+
+When enabled, arguments will transform from, say `[a, b]` to `[prev, a, b]` — the result of the previous execution will be passed as the first parameter.
+
+Once the queue is empty, execution stops. If the queue was empty and a new execution was scheduled, execution starts immediately.
 
 
 ### Runtime management
+
+You can start and stop the execution explicitly:
+```JS
+meta.start()
+meta.stop()
+```
+
+You can also clear the whole queue. It will stop the execution and the whole old queue will be lost%
+```JS
+meta.clear()
+```
+
+### Getting execution context
 
 ### Events
 
