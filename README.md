@@ -19,12 +19,24 @@ Speaking of conceptions, metameta is _an alternative JS interpreter written in J
   })
   
   // schedule the function to run
-  meta.push(text => alert(text), ['hello!'])
+  meta.push(alert, ['hello!'])
+  // alerts 'hello!'
   
-  // if third parameter is true, the function will receive the previous result as the first argument
+  // if chains parameter is true, the function will receive the previous result as the first argument
   meta.push(() => 4)
-  meta.push(value => console.log(value), [], true)
+  meta.push(console.log, true)
   // prints out 4
+  
+  meta.push(prompt, ['Enter your name'])
+  meta.push(alert, true)
+  // alerts whatever you've entered
+  
+  
+  meta.push(x => x + 3, [1])
+  // prev will be 4, that's the result of the previous execution which'll be passed as the first argument
+  meta.push((prev, x) => prev + x + 2, [4], true)
+  meta.push(console.log, true)
+  // prints out 10
 ```
 
 ## Why?
@@ -33,7 +45,20 @@ Because it's faster. For example, if you need to render tons of DOM elements fro
 Being used properly, Metameta drastically reduces [time to interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive).
 
 ## Complete API guide
-TODO
+
+### The meta-flow
+
+
+
+### Runtime management
+
+### Events
+
+### Cheatsheet
+```JS
+
+```
 
 ## Credits
-[@martyns0n](https://github.com/martyns0n), [@ai](https://github.com/ai) — inspiration
+[@martyns0n](https://github.com/martyns0n), [@ai](https://github.com/ai) — inspiration  
+[Monetochka](https://vk.com/lisamonetka) — naming
