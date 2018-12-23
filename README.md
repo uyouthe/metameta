@@ -48,6 +48,5 @@ Being used properly, Metameta drastically reduces [time to interactive](https://
 TODO
 
 ## Credits
-[@martyns0n](https://github.com/martyns0n), [@ai](https://github.com/ai) — inspiration
-
+[@martyns0n](https://github.com/martyns0n), [@ai](https://github.com/ai) — inspiration  
 [Monetochka](https://vk.com/lisamonetka) — naming
