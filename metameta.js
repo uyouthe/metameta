@@ -45,8 +45,19 @@ class Metameta {
 
       if (next) {
         const nextFunction = next[0]
-        const nextArgs = next[1] || []
-        const chains = next[2]
+        let nextArgs = []
+        let chains = false
+
+        if (next.length === 2) {
+          if (Array.isArray(next[1])) {
+            nextArgs = next[1]
+          } else {
+            chains = true
+          }
+        } else if (next.length === 3) {
+          nextArgs = next[1]
+          chains = true
+        }
 
         if (chains) {
           // pass previous execution result as the first argument
@@ -78,15 +89,16 @@ class Metameta {
     this.events['stop'](true)
   }
 
-  push (fn, args, chains = false) {
+  push () {
     const prevLength = this.queue.length
-    this.queue.push([fn, args, chains])
+    const args = Array.from(arguments)
+    this.queue.push(args)
 
     if (prevLength === 0) {
       this.start()
     }
 
-    this.events['push'](fn, prevLength === 0)
+    this.events['push'](args[0], prevLength === 0)
   }
 
   clear () {
