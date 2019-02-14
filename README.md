@@ -1,4 +1,4 @@
-# 🤔 Metameta
+# 🤪 Metameta
 
 > dude, i'm feeling like i've just pushed myself up to the meta level...
 >
