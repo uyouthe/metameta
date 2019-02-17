@@ -1,4 +1,4 @@
-# 🤪 Metameta
+# 🤪 Metameta [![Become a patron](https://miloslav.website/patreon.svg)](https://www.patreon.com/uyouthe)
 
 > dude, i'm feeling like i've just pushed myself up to the meta level...
 >
