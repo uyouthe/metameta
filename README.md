@@ -1,5 +1,4 @@
-# 🤪 Metameta [![Become a patron](https://miloslav.website/patreon.svg)](https://www.patreon.com/uyouthe)
-
+# 🤪 Metameta 
 > dude, i'm feeling like i've just pushed myself up to the meta level...
 >
 >— <cite>me, while hackatoning at Hogan Coffee with [@martyns0n](https://github.com/martyns0n)</cite>
