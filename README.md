@@ -1,11 +1,11 @@
 # 🤪 Metameta 
 > dude, i'm feeling like i've just pushed myself up to the meta level...
 >
->— <cite>me, while hackatoning at Hogan Coffee with [@martyns0n](https://github.com/martyns0n)</cite>
+>— <cite>me, while hackatoning at Hogan Coffee with [@m0rtyn](https://github.com/m0rtyn)</cite>
 
 Metameta is an alternative runtime for JavaScript. It basically stores the whole execution queue as an array, pulling out the first one in row, executing it and goes to the next one until there's no one left.
 
-Speaking of conceptions, metameta is _an alternative JS interpreter written in JS_. So, get ready to push yourself up to the meta-level.
+Speaking of conceptions, metameta is _an alternative JS runtime written in JS_. So, get ready to push yourself up to the meta-level.
 
 
 ## Crash course
@@ -156,5 +156,5 @@ meta.off('start')
 ```
 
 ## Credits
-[@martyns0n](https://github.com/martyns0n), [@ai](https://github.com/ai) — inspiration  
-[Monetochka](https://vk.com/lisamonetka) — naming
+- [@m0rtyn](https://github.com/m0rtyn), [@ai](https://github.com/ai) — inspiration  
+- [Monetochka](https://vk.com/lisamonetka) — naming
