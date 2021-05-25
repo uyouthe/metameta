@@ -1,6 +1,6 @@
 {
   "name": "metalevel",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "🤪 Isomorphic meta-context for more efficient JS runtime performance",
   "main": "index.js",
   "repository": {
