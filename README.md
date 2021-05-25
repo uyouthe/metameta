@@ -7,8 +7,26 @@ Metameta is an alternative runtime for JavaScript. It basically stores the whole
 
 Speaking of conceptions, metameta is _an alternative JS runtime written in JS_. So, get ready to push yourself up to the meta-level.
 
+## Installation
+
+```
+npm install metameta --save
+```
+
+or
+
+```HTML
+<script src="https://cdn.jsdelivr.net/gh/mvoloskov/metameta/metameta.min.js" type="module"></script>
+<script type="module">
+  import Metameta from './metameta.js'
+  const meta = new Metameta()
+
+  meta.push(alert, ['Hello World!'])
+</script>
+```
 
 ## Crash course
+
 ```JS
 // options object is optional, here are the defaults
 
