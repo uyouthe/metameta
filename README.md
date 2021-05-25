@@ -1,5 +1,5 @@
 # 🤪 Metameta 
-> dude, i'm feeling like i've just pushed myself up to the meta level...
+> Dude, i'm feeling like i've just transitioned to the meta level...
 >
 >— <cite>me, while hackatoning at Hogan Coffee with [@m0rtyn](https://github.com/m0rtyn)</cite>
 
