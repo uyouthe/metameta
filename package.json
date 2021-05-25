@@ -1,23 +1,33 @@
 {
   "name": "metameta",
   "version": "1.0.0",
-  "description": "Isomorphic meta-context for more efficient JS runtime",
-  "main": "metameta.js",
+  "description": "🤪 Isomorphic meta-context for more efficient JS runtime performance",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uyouthe/metameta.git"
+    "url": "git+https://github.com/mvoloskov/metameta.git"
   },
   "keywords": [
+    "fast",
     "js",
-    "meta",
-    "metameta",
-    "function",
-    "async"
+    "runtime",
+    "async",
+    "optimization"
   ],
-  "author": "Miloslav Voloskov",
-  "license": "MIT",
+  "files": [
+    "/metameta.js"
+  ],
+  "author": "mvoloskov",
+  "license": "BSL-1.0",
   "bugs": {
-    "url": "https://github.com/uyouthe/metameta/issues"
+    "url": "https://github.com/mvoloskov/metameta/issues"
   },
-  "homepage": "https://github.com/uyouthe/metameta#readme"
+  "homepage": "https://github.com/mvoloskov/metameta#readme",
+  "scripts": {
+    "test": "exit 0",
+    "dev": "serve"
+  },
+  "devDependencies": {
+    "serve": "^11.3.2"
+  }
 }

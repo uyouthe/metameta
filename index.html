@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>metameta.js — an alternative execution context</title>
+    <title>Metameta.js — isomorphic meta-context for more efficient JS runtime performance</title>
 
     <style>
       span {
@@ -17,9 +17,9 @@
     </style>
   </head>
   <body>
-
-    <script src="metameta.js"></script>
-    <script>
+    <script src="metameta.js" type="module"></script>
+    <script type="module">
+      import Metameta from './metameta.js'
       const meta = new Metameta()
 
       const limit = parseInt(prompt('How much nodes? 10000 is fine') || 10000)
