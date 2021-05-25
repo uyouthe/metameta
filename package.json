@@ -15,7 +15,7 @@
     "optimization"
   ],
   "files": [
-    "/metameta.js"
+    "metameta.js"
   ],
   "author": "mvoloskov",
   "license": "BSL-1.0",
