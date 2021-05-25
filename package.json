@@ -1,11 +1,11 @@
 {
-  "name": "metameta",
+  "name": "metalevel",
   "version": "1.0.0",
   "description": "🤪 Isomorphic meta-context for more efficient JS runtime performance",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mvoloskov/metameta.git"
+    "url": "git+https://github.com/mvoloskov/metalevel.git"
   },
   "keywords": [
     "fast",
@@ -15,14 +15,14 @@
     "optimization"
   ],
   "files": [
-    "metameta.js"
+    "metalevel.js"
   ],
   "author": "mvoloskov",
   "license": "BSL-1.0",
   "bugs": {
-    "url": "https://github.com/mvoloskov/metameta/issues"
+    "url": "https://github.com/mvoloskov/metalevel/issues"
   },
-  "homepage": "https://github.com/mvoloskov/metameta#readme",
+  "homepage": "https://github.com/mvoloskov/metalevel#readme",
   "scripts": {
     "test": "exit 0",
     "dev": "serve"

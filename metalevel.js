@@ -1,4 +1,4 @@
-class Metameta {
+class Metalevel {
     constructor(options = {}) {
         this.options = {
             interval: options.interval || 20,
@@ -123,4 +123,4 @@ class Metameta {
     }
 }
 
-export default Metameta
+export default Metalevel

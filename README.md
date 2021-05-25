@@ -1,25 +1,25 @@
-# 🤪 Metameta 
+# 🤪 Metalevel 
 > Dude, i'm feeling like i've just transitioned to the meta level...
 >
 >— <cite>me, while hackatoning at Hogan Coffee with [@m0rtyn](https://github.com/m0rtyn)</cite>
 
-Metameta is an alternative runtime for JavaScript. It basically stores the whole execution queue as an array, pulling out the first one in row, executing it and goes to the next one until there's no one left.
+Metalevel is an alternative runtime for JavaScript. It basically stores the whole execution queue as an array, pulling out the first one in row, executing it and goes to the next one until there's no one left.
 
-Speaking of conceptions, metameta is _an alternative JS runtime written in JS_. So, get ready to push yourself up to the meta-level.
+Speaking of conceptions, metalevel is _an alternative JS runtime written in JS_. So, get ready to push yourself up to the meta-level.
 
 ## Installation
 
 ```
-npm install metameta --save
+npm install metalevel --save
 ```
 
 or
 
 ```HTML
-<script src="https://cdn.jsdelivr.net/gh/mvoloskov/metameta/metameta.min.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/gh/mvoloskov/metalevel/metalevel.min.js" type="module"></script>
 <script type="module">
-  import Metameta from './metameta.js'
-  const meta = new Metameta()
+  import Metalevel from './metalevel.js'
+  const meta = new Metalevel()
 
   meta.push(alert, ['Hello World!'])
 </script>
@@ -30,7 +30,7 @@ or
 ```JS
 // options object is optional, here are the defaults
 
-const meta = new Metameta({
+const meta = new Metalevel({
   interval: 20, // how much to wait in between executions, milliseconds
   bias: 50      // how much functions to execute in one async iteration
 })
@@ -57,15 +57,15 @@ meta.push(console.log, true)
 ```
 
 ## Why?
-Because it's faster. For example, if you need to render tons of DOM elements from, say, json, metameta will render them in the background, fast and asynchronously, taking by 50 or by whatever you like.
+Because it's faster. For example, if you need to render tons of DOM elements from, say, json, metalevel will render them in the background, fast and asynchronously, taking by 50 or by whatever you like.
 
-Being used properly, Metameta drastically reduces [time to interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive).
+Being used properly, Metalevel drastically reduces [time to interactive](https://developers.google.com/web/tools/lighthouse/audits/time-to-interactive).
 
 ## Complete API guide
 
 ### The meta-flow
 
-Once in `interval`, metameta unshifts the function tuple from the queue. It looks like this:
+Once in `interval`, metalevel unshifts the function tuple from the queue. It looks like this:
 ```JS
 [fn, [args], false]
 ```
@@ -130,10 +130,10 @@ Events available:
 ## Cheatsheet
 ```JS
 // standard parameters: interval is 20 ms, bias is 50
-const meta = new Metameta()
+const meta = new Metalevel()
 
 // passing options
-const meta = new Metameta({
+const meta = new Metalevel({
   interval: 100,
   bias: 1
 })
@@ -174,5 +174,4 @@ meta.off('start')
 ```
 
 ## Credits
-- [@m0rtyn](https://github.com/m0rtyn), [@ai](https://github.com/ai) — inspiration  
-- [Monetochka](https://vk.com/lisamonetka) — naming
+- [@m0rtyn](https://github.com/m0rtyn), [@ai](https://github.com/ai) — inspiration 
