@@ -2,7 +2,7 @@
   "name": "metalevel",
   "version": "2.0.3",
   "description": "🤪 Isomorphic meta-context for more efficient JS runtime performance",
-  "main": "index.js",
+  "main": "metalevel.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mvoloskov/metalevel.git"
